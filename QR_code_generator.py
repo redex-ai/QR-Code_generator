@@ -1,7 +1,7 @@
 import qrcode
 
-# Enter url of any website here.
-input_URL = "https://www.google.com/"
+# Prompt the user for input URL
+input_URL = input("Enter the URL: ")
 
 qr = qrcode.QRCode(
     version=1,
