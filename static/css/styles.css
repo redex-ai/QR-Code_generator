@@ -1,0 +1,49 @@
+/* Styles for the QR Code form and result display */
+
+.form-container {
+  max-width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type='text'] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group input[type='submit'] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #5cb85c;
+  color: white;
+  cursor: pointer;
+}
+
+.form-group input[type='submit']:hover {
+  background-color: #4cae4c;
+}
+
+.qr-code-display {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.qr-code-display img {
+  max-width: 100%;
+  height: auto;
+}
