@@ -1,21 +1,44 @@
-# QR code generator using Python
-This script take a link of any URL and generate a `QR code` corresponding to it.
-### Prerequisites
-`Python 3`
-### Library Used
-* [qrcode](https://github.com/lincolnloop/python-qrcode)
+# QR Code Generator Web Application
 
-### To install required external modules
-Run `pip install qrcode` 
+This web application allows users to generate QR codes for any URL through a simple web interface.
 
-### How to run the script
-- Provide your desired URL in the script
-- Execute `python3 QR_code_generator.py`
+## Prerequisites
+- Python 3
+- Django
 
-### Screenshot showing the sample use of the script
+## Libraries Used
+- Django
+- qrcode
+
+## Setup and Installation
+
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the required packages using:
+   ```
+   pip install -r requirements.txt
+   ```
+
+## Running the Web Server
+
+1. To start the Django development server, run:
+   ```
+   python manage.py runserver
+   ```
+2. Open your web browser and go to `http://127.0.0.1:8000/` to view the application.
+
+## Using the Web Interface
+
+1. Once the server is running, navigate to the main page of the web application.
+2. Enter the URL you wish to generate a QR code for in the input field provided.
+3. Submit the form, and the QR code will be generated and displayed on the screen.
+
+## Screenshot showing the sample use of the web interface
+
 <p align="center">
-  <a href="output 1.png"><img src="https://user-images.githubusercontent.com/85709371/151921721-132e76c1-1604-49ad-9234-1ef3cc9ac45b.png" alt="url_qrcode"></a>
+  <img src="screenshot.png" alt="Web Interface Screenshot">
 </p>
 
-## *Author Name*
+## Author Name
 [Vikrant](https://github.com/vikrant-v28)
+
