@@ -1,20 +1,28 @@
 import qrcode
+import logging
 
-# Enter url of any website here.
-input_URL = "https://www.google.com/"
+# Set up logging
+logging.basicConfig(level=logging.INFO)
 
-qr = qrcode.QRCode(
-    version=1,
-    error_correction=qrcode.constants.ERROR_CORRECT_L,
-    box_size=15,
-    border=4,
-)
 
-qr.add_data(input_URL)
-qr.make(fit=True)
+def generate_qr_code(input_URL):
+    logging.info('Starting QR code generation.')
+    logging.debug('URL provided: %s', input_URL)
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=15,
+        border=4,
+    )
 
-# convert into image
-img = qr.make_image(fill_color="red", back_color="white")
-img.save("url_qrcode.png")
+    qr.add_data(input_URL)
+    qr.make(fit=True)
 
-print(qr.data_list)
+    # convert into image
+    img = qr.make_image(fill_color="red", back_color="white")
+
+    # Save the QR code image to a file or do something else with the image object
+    # img.save("url_qrcode.png")
+    logging.info('QR code generation completed successfully.')
+
+    return img
