@@ -1,20 +1,26 @@
 import qrcode
+from io import BytesIO
 
-# Enter url of any website here.
-input_URL = "https://www.google.com/"
 
-qr = qrcode.QRCode(
-    version=1,
-    error_correction=qrcode.constants.ERROR_CORRECT_L,
-    box_size=15,
-    border=4,
-)
+def generate_qr_code(input_url):
+    # Initialize QRCode object
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=10,
+        border=5,
+    )
 
-qr.add_data(input_URL)
-qr.make(fit=True)
+    # Add data to the QR Code
+    qr.add_data(input_url)
+    qr.make(fit=True)
 
-# convert into image
-img = qr.make_image(fill_color="red", back_color="white")
-img.save("url_qrcode.png")
+    # Create an image from the QR Code instance
+    img = qr.make_image(fill='black', back_color='white')
 
-print(qr.data_list)
+    # Save it to a BytesIO object to avoid writing to disk
+    img_bytes = BytesIO()
+    img.save(img_bytes)
+    img_bytes.seek(0)
+
+    return img_bytes
