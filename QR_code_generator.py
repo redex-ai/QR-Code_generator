@@ -1,7 +1,12 @@
 import qrcode
+import logging
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
 
 
 def generate_qr_code(input_URL, fill_color='black', back_color='white'):
+    logging.info(f'Generating QR code for: {input_URL}')
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
@@ -13,7 +18,7 @@ def generate_qr_code(input_URL, fill_color='black', back_color='white'):
 
     # convert into image
     img = qr.make_image(fill_color=fill_color, back_color=back_color)
-
+    logging.info('QR code generation successful')
     return img
 
 # Example usage:
