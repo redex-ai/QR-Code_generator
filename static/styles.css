@@ -1,0 +1,55 @@
+/* Styles for the QR Code Generator Form and Display */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  margin-top: 30px;
+}
+
+form input[type='text'],
+form input[type='submit'] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+form input[type='submit'] {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form input[type='submit']:hover {
+  background-color: #4cae4c;
+}
+
+.qr-code {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.qr-code img {
+  max-width: 100%;
+  height: auto;
+}
