@@ -1,21 +1,37 @@
-# QR code generator using Python
-This script take a link of any URL and generate a `QR code` corresponding to it.
+# QR Code Generator Web Application
+
+This web application allows users to generate QR codes for any URL. The QR code generation logic is implemented in Python using the Flask framework.
+
 ### Prerequisites
-`Python 3`
-### Library Used
-* [qrcode](https://github.com/lincolnloop/python-qrcode)
+- Python 3
+- Flask
 
-### To install required external modules
-Run `pip install qrcode` 
+### Libraries Used
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+- [qrcode](https://github.com/lincolnloop/python-qrcode)
 
-### How to run the script
-- Provide your desired URL in the script
-- Execute `python3 QR_code_generator.py`
+### Setup and Installation
+1. Clone the repository to your local machine.
+2. Install the required dependencies by running `pip install -r requirements.txt`.
+3. Navigate to the project directory.
 
-### Screenshot showing the sample use of the script
+### How to Run the Web Server
+1. Execute `python app.py` to start the Flask web server.
+2. Open your web browser and go to `http://127.0.0.1:5000/`.
+3. Enter the URL you wish to generate a QR code for in the input form and submit.
+4. The generated QR code will be displayed on the webpage.
+
+### Features
+- Simple web interface for generating QR codes.
+- QR codes are generated dynamically based on user input.
+
+### Screenshot showing the sample use of the web application
 <p align="center">
-  <a href="output 1.png"><img src="https://user-images.githubusercontent.com/85709371/151921721-132e76c1-1604-49ad-9234-1ef3cc9ac45b.png" alt="url_qrcode"></a>
+  <img src="screenshot.png" alt="Web application screenshot">
 </p>
 
-## *Author Name*
+## Author Name
 [Vikrant](https://github.com/vikrant-v28)
+
+### License
+This project is licensed under the MIT License - see the LICENSE.md file for details
