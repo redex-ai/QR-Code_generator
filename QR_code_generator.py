@@ -11,7 +11,7 @@ logging.basicConfig(handlers=[RotatingFileHandler('qr_generation.log', maxBytes=
 input_URL = "https://www.google.com/"
 
 logging.info('Starting QR code generation process.')
-logging.info(f'Input URL: {input_URL}')
+logging.debug(f'Input URL: {input_URL}')
 
 try:
     qr = qrcode.QRCode(
@@ -20,9 +20,13 @@ try:
         box_size=15,
         border=4,
     )
+    logging.debug('QR code instance created.')
 
     qr.add_data(input_URL)
+    logging.debug('Data added to QR code.')
+
     qr.make(fit=True)
+    logging.debug('QR code fitting is done.')
 
     # convert into image
     img = qr.make_image(fill_color="red", back_color="white")
@@ -31,4 +35,5 @@ try:
 except Exception as e:
     logging.error(f'Error during QR code generation: {e}')
 
+logging.debug(f'QR code data list: {qr.data_list}')
 print(qr.data_list)
