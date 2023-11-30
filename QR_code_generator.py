@@ -1,20 +1,35 @@
 import qrcode
+import sys
+import os
 
-# Enter url of any website here.
-input_URL = "https://www.google.com/"
+# Function to generate QR code
+def generate_qr_code(url, index):
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=10,
+        border=4,
+    )
+    qr.add_data(url)
+    qr.make(fit=True)
 
-qr = qrcode.QRCode(
-    version=1,
-    error_correction=qrcode.constants.ERROR_CORRECT_L,
-    box_size=15,
-    border=4,
-)
+    # convert into image
+    img = qr.make_image(fill_color='black', back_color='white')
 
-qr.add_data(input_URL)
-qr.make(fit=True)
+    # Save the image with a unique name
+    filename = f'url_qrcode_{index}.png'
+    img.save(filename)
+    print(f'QR code generated for: {url} - Saved as: {filename}')
 
-# convert into image
-img = qr.make_image(fill_color="red", back_color="white")
-img.save("url_qrcode.png")
+# Main function to process multiple URLs
+if __name__ == '__main__':
+    # Check if URLs are provided as command-line arguments
+    if len(sys.argv) > 1:
+        urls = sys.argv[1:]
+    else:
+        print('No URLs provided. Please provide URLs as command-line arguments.')
+        sys.exit(1)
 
-print(qr.data_list)
+    # Generate QR code for each URL
+    for index, url in enumerate(urls, start=1):
+        generate_qr_code(url, index)
