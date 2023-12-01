@@ -1,23 +1,16 @@
 # QR code generator using Python
-This script takes a link of any URL and generates a `QR code` corresponding to it. Now with added logging functionality to track the process.
-
+This script take a link of any URL and generate a `QR code` corresponding to it.
 ### Prerequisites
 `Python 3`
-
 ### Library Used
 * [qrcode](https://github.com/lincolnloop/python-qrcode)
 
 ### To install required external modules
-Run `pip install qrcode`
+Run `pip install qrcode` 
 
 ### How to run the script
 - Provide your desired URL in the script
 - Execute `python3 QR_code_generator.py`
-
-### Logging
-The script logs its progress in `qr_generation.log` file. It includes information about the start of the process, the input URL, any errors encountered, and the successful saving of the QR code image. The log file rotates after reaching a size of 5KB and keeps a backup count of 2.
-
-To change the log level, modify the `level` parameter in the `basicConfig` method within the script.
 
 ### Screenshot showing the sample use of the script
 <p align="center">
