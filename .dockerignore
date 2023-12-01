@@ -1,0 +1,32 @@
+__pycache__
+.git
+*.pyc
+*.pyo
+*.pyd
+.Python
+build
+develop-eggs
+dist
+downloads
+eggs
+.eggs
+lib
+lib64
+parts
+sdist
+var
+*.egg-info
+.installed.cfg
+*.egg
+MANIFEST
+
+# If there's a virtualenv directory, exclude it
+venv
+
+# Exclude the Dockerfile and .dockerignore files
+Dockerfile
+.dockerignore
+
+# Exclude any markdown and text files
+*.md
+*.txt
